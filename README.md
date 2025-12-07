@@ -8,7 +8,7 @@ This project is a web application that predicts the success of movies using a ma
 *   **Search Functionality:** Search for movies by title, genre, or keywords.
 *   **Popular Movies:** Displays a list of the most popular movies on page load.
 *   **Movie Details:** View detailed information for each movie in a modal pop-up.
-*   **ML Prediction (Placeholder):** A form to input movie details and get a predicted success score. *Note: The prediction logic is currently a placeholder and needs to be implemented.*
+*   **ML-Powered Predictions:** Input movie details (budget, genre, etc.) to get a predicted revenue, ROI, and success score from a trained linear regression model.
 
 ## How to Run the Application
 
@@ -25,7 +25,7 @@ This project consists of a Python backend and a JavaScript frontend. You need to
 Open a terminal or command prompt in the project's root directory and install the required Python libraries by running:
 
 ```bash
-pip install kagglehub[pandas-datasets] flask flask-cors pandas
+pip install -r requirements.txt
 ```
 
 ### Step 2: Set Up Kaggle API Credentials
@@ -33,6 +33,7 @@ pip install kagglehub[pandas-datasets] flask flask-cors pandas
 In order to download the movie dataset, the backend needs access to your Kaggle API credentials.
 
 1.  **Download your API Token:** Go to your Kaggle account page (e.g., `https://www.kaggle.com/YourUsername/account`) and click on **Create New API Token**. This will download a `kaggle.json` file.
+    *   If the file does not download automatically, you can manually create a file named `kaggle.json` and paste the credentials displayed on the screen.
 
 2.  **Place the API Token:**
     *   **For Linux/macOS:** Create a folder named `.kaggle` in your home directory (`~/.kaggle`) and place the `kaggle.json` file inside it.
@@ -52,4 +53,4 @@ If successful, you will see messages in the terminal indicating the server is ru
 
 Open the `index.html` file in your favorite web browser.
 
-The page should now load correctly, displaying a grid of popular movies. You can use the search bar to find specific movies and click on any movie card to see more details.
+The page should now load correctly, displaying a grid of popular movies. You can use the search bar to find specific movies, and use the prediction form to get success estimates for new movie ideas.
